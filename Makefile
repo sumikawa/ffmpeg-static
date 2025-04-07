@@ -1,4 +1,3 @@
 all::
-	docker build -t ffmpeg .
-	docker run ffmpeg:latest
-	docker cp `docker ps --all | grep ffmpeg:latest | cut -f 1 -d ' '`:/usr/local/bin/ffmpeg .
+	docker run mwader/static-ffmpeg -version
+	docker cp `docker ps --all | grep mwader/static-ffmpeg | cut -f 1 -d ' ' | head -1`:/ffmpeg .
